@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Triodion&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumar+One&display=swap");
+
+@media screen and (max-width: 500px) {
+  #form1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  #form div {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 500px) {
+  #form {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+  #form div {
+    display: flex;
+    flex-direction: row;
+  }
+}
+#imgoftheproduct {
+}
+#imgoftheproduct img {
+  height: 315px;
+  width: 100%;
+  /* box-shadow: 2px 0px 5px black; */
+  border-radius: 6px;
+}
+#discription {
+  margin: 20px 0px 0px 0px;
+  font-family: "Triodion", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 19px;
+}
+#seller {
+  text-transform: capitalize;
+  margin: 10px 0px 0px 0px;
+  font-size: 20px;
+  font-family: "Kumar One", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 19px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#moreinformation {
+  margin: 30px 0px 0px 0px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+#moreinformation div {
+  background-color: #ffd085;
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-family: "Triodion", serif;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 6px;
+}
+#select_numbers {
+  margin: 20px 0px 0px 0px;
+}
+#select_numbers select {
+  height: 40px;
+  width: 60px;
+  margin: 20px 0px 0px 0px;
+  background-color: #ffd085;
+  border-radius: 6px;
+  border: none;
+  font-family: "Triodion", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#button_hai {
+  margin: 20px 0px 30px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#button_hai input {
+  border: none;
+  height: 48px;
+  background-color: blue;
+  font-size: 20px;
+  color: white;
+  border-radius: 6px;
+  font-family: "Triodion", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#used_material {
+  margin: 30px 0px 0px 0px;
+  font-family: "Triodion", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 18px;
+}
+.main_box_two_is {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 300px;
+  border: 1px solid #b7aaaa;
+  padding: 4px;
+  font-family: "Yrsa", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  cursor: pointer;
+  border-radius: 7px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+#box2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  margin: 40px 0px 0px 0px;
+}
+.main_box_two_is div img {
+  height: 160px;
+  border-radius: 7px;
+  width: 100%;
+}
+.name_price {
+  font-family: "Yrsa", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  overflow-y: auto;
+  scrollbar-width: none;
+  font-size: 19px;
+}

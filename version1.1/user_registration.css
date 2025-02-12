@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+body {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Fira Sans", serif;
+  font-weight: 300;
+  font-style: normal;
+  /* background-image: linear-gradient(white, rgb(235, 204, 149), white); */
+}
+marquee {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 23px;
+  color: blue;
+  font-weight: 400;
+}
+@media screen and (max-width: 600px) {
+  .body_main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .body_main .box1 img {
+    height: 60vh;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .body_main {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .body_main .box1 img {
+    height: 100vh;
+    width: 100%;
+  }
+}
+form {
+  margin: 40px 10px 10px 10px;
+}
+#validationServer01,
+#validationServer02 {
+  text-transform: capitalize;
+}
+input {
+  font-family: "Fira Sans", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.alertcon {
+  margin: 30px 10px 10px 10px;
+  padding: 10px;
+}
+.submit {
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  border-radius: 6px;
+}
+.unsubmit {
+  background-color: red;
+  color: white;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px;
+  border-radius: 6px;
+}

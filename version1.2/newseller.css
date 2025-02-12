@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumar+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumar+One&family=Lobster&display=swap");
+body {
+  margin: 0%;
+  padding: 0%;
+  /* overflow-y: hidden; */
+}
+.header_navbar {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: repeat(3);
+  /* background-image: linear-gradient(blue, white); */
+}
+.header_navbaar_items {
+  /* background-color: red; */
+  /* border: 1px solid black; */
+}
+.header_navbaar_items_box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-family: "Kumar One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.header_detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.header_detail_box {
+  height: 150px;
+  width: 90%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background-image: linear-gradient(white, blue);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 1px 0px 12px black;
+  font-family: "Kumar One", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+.main_box1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 300px;
+  background-color: black;
+  color: white;
+  gap: 10px;
+}
+.main_box1_box {
+  height: 250px;
+  background-color: aliceblue;
+}

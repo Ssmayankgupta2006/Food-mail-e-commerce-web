@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap");
+body {
+  margin: 0%;
+  padding: 0%;
+}
+* {
+  font-family: "Fira Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@media screen and (max-width: 500px) {
+  .nabvarhidhai {
+    display: none;
+  }
+  .navbar_main {
+    position: sticky;
+    top: 0px;
+    display: grid;
+    grid-template-rows: 1fr;
+    background-color: white;
+  }
+  .navbarhai {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 8px;
+  }
+  .navbarhai a {
+    text-decoration: none;
+    color: blue;
+  }
+  .box_name {
+    font-family: "Elsie", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 26px;
+  }
+  .box_registration_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: blue;
+  }
+  .navbarhaitwo {
+    padding: 6px;
+    /* position: static;
+    top: 0px; */
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  .header_box_two {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .navbarhaitwo a {
+    text-decoration: none;
+    color: black;
+  }
+  .navbarhaithree {
+    margin: 30px 10px 10px 10px;
+  }
+  .navbarhaithree form {
+    display: grid;
+    grid-template-columns: 0.75fr 0.25fr;
+    grid-gap: 6px;
+  }
+  .navbarhaithree form input[type="search"] {
+    height: 46px;
+    padding: 5px;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 6px;
+  }
+  .navbarhaithree form input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 6px;
+    font-size: 19px;
+  }
+  .navbarhaifour {
+    margin: 6px;
+    display: none;
+    padding: 4px;
+    background-color: whitesmoke;
+  }
+  .product_by_search {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 4px;
+  }
+  #product_by_search_button {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #product_by_search_button span {
+    height: 30px;
+    width: 30px;
+    color: black;
+    padding: 4px;
+  }
+  .product_details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+  }
+  .productname {
+    color: red;
+  }
+  .sellername {
+    margin: 0px 0px 0px 10px;
+    color: black;
+    font-size: 12px;
+  }
+  .header_box1 {
+    margin: 80px 10px 10px 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    /* width: 100%; */
+  }
+  .header_box1 div {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd085;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    /* font-style: normal; */
+  }
+  .header_box1 img {
+    height: 400px;
+    width: 100%;
+    background-color: black;
+  }
+  .available_iteams {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 10px;
+    margin: 40px 4px 0px 4px;
+    height: fit-content;
+  }
+  .available_iteams span {
+    width: max-content;
+    text-wrap: nowrap;
+    padding: 10px;
+    border: 1px solid #a39c9c;
+    border-radius: 4px;
+    font-family: "Elsie", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .main_container {
+    margin: 40px 10px 400px 10px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+  .main_box_two_is {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 300px;
+    border: 1px solid #b7aaaa;
+    padding: 4px;
+    font-family: "Yrsa", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    cursor: pointer;
+    border-radius: 7px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+  }
+  .main_box_two_is div img {
+    height: 160px;
+    border-radius: 7px;
+    width: 100%;
+  }
+  .name_price {
+    font-family: "Yrsa", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    overflow-y: auto;
+    scrollbar-width: none;
+    font-size: 19px;
+  }
+  .username {
+    font-style: italic;
+    font-size: smaller;
+    color: #7f72ed;
+  }
+  .welcome_container {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    height: 50vh;
+    background-color: black;
+    color: white;
+  }
+  .welcome_container_box {
+    padding: 8px;
+  }
+  .welcome_container_box2 {
+    padding: 8px;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    font-size: 14px;
+    font-weight: 200;
+    color: white;
+  }
+}
+@media screen and (min-width: 500px) {
+  .navbar-brand {
+    font-family: "Elsie", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0px;
+    height: max-content;
+    width: 100%;
+    background-color: #ffd085;
+  }
+  .navbar_main,
+  .navbarhaithree,
+  .navbarhaifour {
+    display: none;
+  }
+  .available_iteams {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 10px;
+    margin: 40px 10px 0px 10px;
+    height: fit-content;
+  }
+  .available_iteams span {
+    width: 200px;
+    height: 200px;
+    text-wrap: wrap;
+    padding: 10px;
+    border: 1px solid #a39c9c;
+    border-radius: 4px;
+    font-family: "Elsie", serif;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: #0b40b894;
+    color: white;
+  }
+  .nav-link {
+    border-bottom: 1px solid transparent;
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-link svg {
+    color: red;
+    margin: 0px 4px 0px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-link img {
+    color: red;
+    margin: 0px 4px 0px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .d-flex input {
+    width: 260px;
+    height: 40px;
+    border: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding: 5px;
+  }
+  .d-flex button {
+    border: none;
+    background: white;
+    width: 120px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .nav-link:hover {
+    border-bottom: 1px solid black;
+  }
+  .header_box1 {
+    margin: 100px 10px 10px 10px;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    height: max-content;
+    /* width: 100%; */
+  }
+  .header_box1 div {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd085;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-size: 23px;
+    text-align: center;
+    /* font-style: normal; */
+  }
+  .header_box1 img {
+    height: 400px;
+    width: 100%;
+    background-color: black;
+  }
+  .main_container {
+    margin: 100px 10px 10px 10px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  }
+  .main_box_two_is {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 400px;
+    border: 1px solid #b7aaaa;
+    padding: 10px;
+    font-family: "Yrsa", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+    border-radius: 7px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+  }
+  .main_box_two_is div img {
+    height: 200px;
+    border-radius: 7px;
+    width: 90%;
+  }
+  .name_price {
+    font-family: "Yrsa", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    overflow-y: auto;
+    scrollbar-width: none;
+    font-size: 20px;
+  }
+}

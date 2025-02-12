@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  margin: 0%;
+  padding: 0%;
+}
+#cart_info {
+  margin: 30px 10px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#cart_info button {
+  margin: 0%;
+  padding: 0%;
+  width: 350px;
+  border: 1px solid black;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 100px 240px;
+  height: 80px;
+  grid-gap: 10px;
+}
+.box_for_img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.box_for_img img {
+  height: 75px;
+  width: 95px;
+  border-radius: 10px;
+}
+.box_for_discription {
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: 100%;
+  width: 100%;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+}
