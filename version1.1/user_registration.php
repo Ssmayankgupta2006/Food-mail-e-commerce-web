@@ -75,8 +75,14 @@
                 <div class="col-12">
                     <button class="btn btn-primary" type="submit" name="submit_button"
                         value="Register">Register</button>
+                    <button class="btn btn-primary" type="button" onclick="gohome()">Home</button>
                 </div>
             </form>
+            <script>
+            function gohome() {
+                document.location.href = 'index.php';
+            }
+            </script>
             <?php
                 require "server.php";
                 if (($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit_button']))) {

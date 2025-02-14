@@ -3,8 +3,42 @@ body {
   margin: 0%;
   padding: 0%;
 }
+.navbarthis {
+  padding: 10px 10px 10px 10px;
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  position: fixed;
+  top: 0px;
+  background-color: white;
+  width: 100%;
+}
+#foodmail {
+  font-family: "Kumar One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+}
+#username {
+  padding-right: 10px;
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  font-size: 22px;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.orders {
+  text-align: center;
+  margin: 100px 0px 40px 0px;
+  background-color: #ffd085;
+  font-size: 22px;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
 #cart_info {
-  margin: 30px 10px 10px 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -13,7 +47,7 @@ body {
   margin: 0%;
   padding: 0%;
   width: 350px;
-  border: 1px solid black;
+  border: 1px solid #ede2e2;
   background-color: white;
   display: grid;
   grid-template-columns: 100px 240px;

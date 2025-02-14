@@ -9,7 +9,7 @@ setInterval(function () {
 }, 1000);
 
 function search_hid() {
-  document.querySelector(".navbarhaifour").style.display = "none";
+  document.querySelector(".navbarhaifour").style.display = "None";
 }
 function search_show() {
   document.querySelector(".navbarhaifour").style.display = "block";

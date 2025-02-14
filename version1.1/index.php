@@ -247,7 +247,7 @@
             ?>
         </form>
         <div class="welcome_container">
-            <div class="welcome_container_box">
+            <div class="welcome_container_box" onclick="hidfunction()">
                 close
             </div>
             <div class="welcome_container_box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe nostrum
@@ -261,9 +261,56 @@
                 doloribus quae quia architecto facere maxime minima nihil porro totam, ex sed, eius, voluptates velit
                 fugit.</div>
         </div>
+        <div class="bigsells">
+            <div>
+                <img src="mick.png" alt="">
+                <img src="mick.png" alt="">
+                <img src="mick.png" alt="">
+            </div>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, officiis!lorem10
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, modi.
+            </div>
+        </div>
+        <form class="main_container" method="post" action="index.php">
+            <?php
+                require "server.php";
+                global $search_two;
+                if (isset($search_two)) {
+                    $select_data_sell = "SELECT `USER ID`, `PRODUCT NAME`, `PRODUCT ID`, `PRODUCT SEARCH ID`, `PRODUCT MIN`, `PRODUCT MAX`, `MARKET RS`, `ACTUAL RS`, `UNIT OF MEASURE`, `PRODUCT DIS`, `PRODUCT USED MATERIAL`, `PRODUCT IMG`, `STATUS`, `ENTRY DATE/TIME` FROM `seller_product_registration` WHERE  (`PRODUCT NAME` LIKE '%" . $search_two . "%') AND `SELL`=='OPEN';";
+                } else {
+                    $select_data_sell = "SELECT `USER ID`, `PRODUCT NAME`, `PRODUCT ID`, `PRODUCT SEARCH ID`, `PRODUCT MIN`, `PRODUCT MAX`, `MARKET RS`, `ACTUAL RS`, `UNIT OF MEASURE`, `PRODUCT DIS`, `PRODUCT USED MATERIAL`, `PRODUCT IMG`, `STATUS`, `ENTRY DATE/TIME` FROM `seller_product_registration` WHERE `SELL`='OPEN';";
+                }
+                $select_data_ex_sell = mysqli_query($conn, $select_data_sell);
+                while ($select_fetch_sell = mysqli_fetch_assoc($select_data_ex_sell)) {
+                    $productid_sell = ($select_fetch_sell['PRODUCT SEARCH ID']);
+                    echo "
+                <button type='submit' name='$productid_sell' value='$productid_sell' class='main_box_two_is' id=' $productid_sell'>
+                    <div>
+                    <img  src='data:image/png;base64," . $select_fetch_sell['PRODUCT IMG'] . "' alt='img' />
+                    </div>
+                    <div class='name_price'>
+                        " . $select_fetch_sell['PRODUCT DIS'] . "
+                    </div>
+                </button>";
+                    if (($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST[$productid_sell]))) {
+                        $_SESSION['search_id'] = ($_POST[$productid_sell]);
+                        echo "<script> document.location.href='product_discription.php';</script>";
+                    }
+                }
+            ?>
+
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footer_rights">
+            IamBig.com all rights are reserved
+        </div>
+    </footer>
     <script src="index.js"></script>
+    <script>
+    function hidfunction() {
+        document.querySelector(".welcome_container").style.display = "None";
+    }
+    </script>
 </body>
 
 </html>
