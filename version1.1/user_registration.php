@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,9 +93,9 @@
                     $emailid      = $_POST['emailid'];
                     $password     = $_POST['password'];
 
-                    $select = "SELECT `FIRST NAME`, `LAST NAME`, `MOBILE NUMBER`, `E MAIL ID`, `PASSWORD` FROM `user registration` WHERE `PASSWORD`!='$password';";
+                    $select = "SELECT `FIRST NAME`, `LAST NAME`, `MOBILE NUMBER`, `E MAIL ID`, `PASSWORD` FROM `user registration` WHERE `PASSWORD`='$password';";
                     $select = mysqli_query($conn, $select);
-                    if ($select_fetch = mysqli_fetch_assoc($select)) {
+                    if (! mysqli_num_rows($select) > 0) {
                         $insert = $conn->prepare("INSERT INTO `user registration`(`FIRST NAME`, `LAST NAME`, `MOBILE NUMBER`, `E MAIL ID`, `PASSWORD`) VALUES (?,?,?,?,?)");
                         $insert->bind_param("sssss", $user_f, $user_l, $mobilenumber, $emailid, $password);
                         $insert->execute();

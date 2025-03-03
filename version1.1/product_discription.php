@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="product_discription.css">
-    <title>Document</title>
+    <title>Documentff</title>
 </head>
 
 <body>
@@ -127,6 +128,13 @@
             }
 
         ?>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio possimus cumque atque similique
+        quidem laborum soluta ipsa ipsam velit corporis quae placeat doloribus veritatis laboriosam, quia aliquid
+        impedit sequi, quaerat deleniti repellat illum commodi cupiditate? Quaerat a rem minima! Repellat perspiciatis,
+        suscipit placeat recusandae, accusamus maxime beatae amet tempora quod asperiores facere cumque reiciendis! Ea
+        commodi eum porro iste cupiditate, totam maxime ullam omnis nesciunt et debitis quibusdam velit earum dolorem
+        quod nobis autem. Molestias vero cum eveniet repudiandae nesciunt quas dolorem ex quam rem repellat corrupti
+        excepturi, expedita eum nisi deleniti laudantium sunt asperiores esse necessitatibus praesentium culpa.
     </main>
 </body>
 

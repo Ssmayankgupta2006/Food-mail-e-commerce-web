@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,14 +23,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Contrail+One&display=swap"
         rel="stylesheet">
-    <title>IamBig.com</title>
+    <title>Food mail</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg nabvarhidhai">
             <div class="container-fluid">
-                <a class="navbar-brand">I<span style='color:red;'>am</span>Big
+                <a class="navbar-brand" id="foodmail_design">Food mail
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -76,9 +77,9 @@
                             <a class="nav-link active" aria-current="page" href="#">Orders</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
+                    <form class="d-flex form_search_desk" role="search">
                         <input type="search" placeholder="IamBig" aria-label="Search">
-                        <button type="submit">Search</button>
+                        <button type="submit" value="Search" name="form_for_mobiles">Search</button>
                     </form>
                 </div>
             </div>
@@ -87,7 +88,7 @@
         <div class="navbar_main">
             <div class="navbarhai">
                 <span class="header_box box_name">
-                    I<span style="color:red;">am</span>Big.com
+                    Food mail
                 </span>
                 <a href="user_registration.php" class="header_box box_registration_login">
                     <span>
@@ -153,49 +154,40 @@
         </div>
         <div class="navbarhaithree">
             <form action="index.php" method="post">
-                <input type="search" name="searchvalue" placeholder="IamBig search here" id="" required>
+                <input type="search" name="searchvalue" placeholder="Food mail search here" id="" required>
                 <input type="submit" value="Search" name="form_for_mobiles">
             </form>
         </div>
-        <div class="navbarhaifour">
-            <div class="product_by_search">
-                <span id="product_by_search_button">
-                    <span onclick="search_hid()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-x-lg" viewBox="0 0 16 16">
-                            <path
-                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                        </svg>
-                    </span>
-                </span>
+        <div class="search_img">
+        </div>
+        <div class="form_search">
+            <img src="improvesearch.png" alt="improvesearch">
+            <form action="index.php" method="post">
                 <?php
                     require "server.php";
-                    if (($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['form_for_mobiles']))) {
-                        $search            = $_POST['searchvalue'];
-                        $search_select     = "SELECT `USER ID`, `PRODUCT NAME`, `PRODUCT ID`, `PRODUCT SEARCH ID`, `PRODUCT MIN`, `PRODUCT MAX`, `MARKET RS`, `ACTUAL RS`, `UNIT OF MEASURE`, `PRODUCT DIS`, `PRODUCT USED MATERIAL`, `PRODUCT IMG`, `STATUS`, `ENTRY DATE/TIME` FROM `seller_product_registration` WHERE (`PRODUCT NAME` LIKE '%" . $search . "%');";
-                        $search_select_ex  = mysqli_query($conn, $search_select);
-                        $search_select_row = mysqli_num_rows($search_select_ex);
-                        if ($search_select_row > 0) {
-                            while ($search_select_fetch = mysqli_fetch_assoc($search_select_ex)) {
-                                echo "
-                            <span class='product_details'>
-                                <a href='index.php#" . $search_select_fetch['PRODUCT SEARCH ID'] . "' class='productname'>" . $search_select_fetch['PRODUCT NAME'] . "</a>
-                            </span>";
-                                $search_two = $_POST['searchvalue'];
-                            }
-                            echo "<script>
-                            document.querySelector('.navbarhaifour').style.display='block';
-                        </script>";
-                        } else {
-                            echo "<script>
-                            document.querySelector('.navbarhaifour').style.display='None';
-                        </script>";
+                    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['form_for_mobiles'])) {
+                        $search        = $_POST['searchvalue'];
+                        $select_two    = "SELECT `USER ID`, `PRODUCT NAME`, `PRODUCT ID`, `PRODUCT SEARCH ID`, `PRODUCT MIN`, `PRODUCT MAX`, `MARKET RS`, `ACTUAL RS`, `UNIT OF MEASURE`, `PRODUCT DIS`, `PRODUCT USED MATERIAL`, `PRODUCT IMG`, `STATUS`, `ENTRY DATE/TIME`, `SELL` FROM `seller_product_registration` WHERE  (`PRODUCT NAME` LIKE '%" . $search . "%')";
+                        $select_two_ex = mysqli_query($conn, $select_two);
+                        while ($select_two_fetch = mysqli_fetch_assoc($select_two_ex)) {
+                            $search_id = $select_two_fetch['PRODUCT SEARCH ID'];
+                            echo "
+                                <button type='submit' name='submitbysearch' value='$search_id'>
+                                    <span class='button_box1'>" . $select_two_fetch['PRODUCT NAME'] . "</span>
+                                    <span class='button_box2'>" . $select_two_fetch['PRODUCT DIS'] . "
+                                    </span>
+                                </button>";
                         }
                     }
-
                 ?>
-            </div>
+            </form>
+            <?php
+                if ($_SERVER['REQUEST_METHOD'] = "POST" && isset($_POST['submitbysearch'])) {
+                    $searchhai = $_POST['submitbysearch'];
+                }
+            ?>
         </div>
+
         <div class="header_box1">
             <div>This platform is dedicated to supporting small businesses and transforming them into efficient and
                 thriving enterprises. By providing essential tools, resources, and guidance, we enable small
@@ -206,13 +198,6 @@
         </div>
         <div class="available_iteams">
 
-            <?php
-                $distinct    = "SELECT DISTINCT  `PRODUCT NAME`, `SEARCH ID` FROM `team_registration_authentication`";
-                $distinct_ex = mysqli_query($conn, $distinct);
-                while ($distinct_fetch = mysqli_fetch_assoc($distinct_ex)) {
-                    echo " <span>" . $distinct_fetch['PRODUCT NAME'] . "</span>";
-                }
-            ?>
         </div>
         <!-- for mobile display till here -->
 
@@ -221,9 +206,9 @@
         <form class="main_container" method="post" action="index.php">
             <?php
                 require "server.php";
-                global $search_two;
-                if (isset($search_two)) {
-                    $select_data = "SELECT `USER ID`, `PRODUCT NAME`, `PRODUCT ID`, `PRODUCT SEARCH ID`, `PRODUCT MIN`, `PRODUCT MAX`, `MARKET RS`, `ACTUAL RS`, `UNIT OF MEASURE`, `PRODUCT DIS`, `PRODUCT USED MATERIAL`, `PRODUCT IMG`, `STATUS`, `ENTRY DATE/TIME` FROM `seller_product_registration` WHERE  (`PRODUCT NAME` LIKE '%" . $search_two . "%');";
+                global $searchhai;
+                if (isset($searchhai)) {
+                    $select_data = "SELECT `USER ID`, `PRODUCT NAME`, `PRODUCT ID`, `PRODUCT SEARCH ID`, `PRODUCT MIN`, `PRODUCT MAX`, `MARKET RS`, `ACTUAL RS`, `UNIT OF MEASURE`, `PRODUCT DIS`, `PRODUCT USED MATERIAL`, `PRODUCT IMG`, `STATUS`, `ENTRY DATE/TIME` FROM `seller_product_registration` WHERE  (`PRODUCT NAME` LIKE '%" . $searchhai . "%');";
                 } else {
                     $select_data = "SELECT `USER ID`, `PRODUCT NAME`, `PRODUCT ID`, `PRODUCT SEARCH ID`, `PRODUCT MIN`, `PRODUCT MAX`, `MARKET RS`, `ACTUAL RS`, `UNIT OF MEASURE`, `PRODUCT DIS`, `PRODUCT USED MATERIAL`, `PRODUCT IMG`, `STATUS`, `ENTRY DATE/TIME` FROM `seller_product_registration`;";
                 }
@@ -301,9 +286,9 @@
 
     </main>
     <footer>
-        <div class="footer_rights">
+        <!-- <div class="footer_rights">
             IamBig.com all rights are reserved
-        </div>
+        </div> -->
     </footer>
     <script src="index.js"></script>
     <script>

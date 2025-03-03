@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="newseller.css">
+    <script src="newseller.js"></script>
 
 
     <title>Document</title>
@@ -174,6 +175,21 @@
                     <div class="input-group mb-3">
                         <input type="text" reduired name='productname' class="form-control" placeholder="Product name"
                             aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <select required name="selectdata" class="form-select" aria-label="Default select example">
+                            <option>Select product type here</option>
+                            <option value="products_cell">Product cell</option>
+                            <option value="JewelleryAccessories">Jewellery & Accessories</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Sports/Fitness">Sports/Fitness</option>
+                            <option value="Food/Drinks">Food / Drinks</option>
+                            <option value="Books">Books</option>
+                            <option value="Footwears">Footwears</option>
+                            <option value="Grossry">Grossry</option>
+                            <option value="Trendings">Trendings</option>
+                            <option value="More">More</option>
+                        </select>
                     </div>
 
                     <div class="input-group mb-3">
@@ -361,7 +377,6 @@
         </div>
 
     </main>
-    <script src="newseller.js"></script>
 </body>
 
 </html>
